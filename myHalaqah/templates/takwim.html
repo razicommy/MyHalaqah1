@@ -1,0 +1,28 @@
+<ion-view title="Takwim" hide-back-button="true" cache-view="false" nav-transition="none" id="page31" style="background-color:#FFFFFF;">
+  <ion-content padding="true" class="has-header">
+    <ion-scroll class="full-page">
+      <ion-list>
+        <div class="list card opac75" ng-repeat="item in calendar">
+          <div class="item">
+
+          </div>
+          <div class="item item-icon-left">
+            <i class="icon ion-calendar"></i>
+            <h3>{{item.summary}}</h3>
+          </div>
+          <div class="item">
+            <p>Dari:
+              <strong>{{item.start.date}}</strong>
+            </p>
+            <p>Hingga:
+              <strong>{{item.end.date}}</strong>
+            </p>
+            <p>Keterangan:
+              <strong> {{item.description}}</strong>
+            </p>
+          </div>
+        </div>
+      </ion-list>
+    </ion-scroll>
+  </ion-content>
+</ion-view>

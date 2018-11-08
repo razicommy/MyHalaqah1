@@ -1,0 +1,43 @@
+<ion-view title="Login" hide-back-button="true" cache-view="false" nav-transition="none" id="page30" style="background-color:#FFFFFF;">
+  <ion-nav-buttons side="left" scroll="false" class="has-header">
+    <button class="button icon No Icon"> Intro</button>
+  </ion-nav-buttons>
+  <ion-content padding="false" scroll="false" class="has-header">
+    <div>
+      <center>
+        <div style="height:100px;"></div>
+        <div>
+          <img ng-src="{{app.user.userInfo.imageData||app.defaults.images.imgPerson}}" style="display: block; width: 25%; height: 25%; margin-left: auto; margin-right: auto;margin-top:0px">
+        </div>
+      </center>
+
+      <!--SIGNED OUT-->
+      <div class="button-bar" ng-show="app.user.userStatus.isSignedOut">
+        <button class="button button-balanced button-clear button-icon"></button>
+        <button ng-click="userAction('user','signIn',null,null)" class="button button-balanced button-clear button-icon icon ion-log-in"></button>
+        <button ng-click="userAction('user','signUp',null,null)" class="button button-calm button-clear button-icon icon ion-person-add"></button>
+        <button class="button button-calm button-clear button-icon"></button>
+      </div>
+      <!--button-bar-->
+      <!--SIGNED IN-->
+      <div class="button-bar" ng-show="app.user.userStatus.isSignedIn">
+        <button class="button button-energized button-block button-icon"></button>
+        <button ng-click="userAction('user','popupView',null,null)" class="button button-energized button-clear button-icon icon ion-gear-a"></button>
+        <button ng-click="userAction('user','signOut',null,null)" class="button button-assertive button-clear button-icon icon ion-log-out assertive"></button>
+        <button class="button button-assertive button-block button-icon assertive"></button>
+      </div>
+      <!--button-bar-->
+      <div style="text-align:center;">
+        <center>
+          <h5>MyHalaqah</h5>
+          <small>
+            <em>Selamat datang ke MyHalaqah.
+              <br>Tap butang Log In
+              <i class="icon ion-log-in"></i> untuk masuk atau butang Sign Up
+              <i class="icon ion-person-add"></i>untuk daftar.</em>
+          </small>
+        </center>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

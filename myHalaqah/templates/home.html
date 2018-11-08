@@ -1,0 +1,20 @@
+<ion-view title="Home" hide-back-button="true" cache-view="false" nav-transition="none" id="page25" style="background-color:#FFFFFF;">
+  <ion-content padding="true" class="has-header">
+    <ion-scroll class="full-page" ng-show="app.selected.topMenu=='News' || true">
+      <ion-list>
+        <div class="list card opac75" ng-repeat="item in news">
+          <div class="item">
+
+          </div>
+          <div class="item item-avatar">
+            <img ng-src="{{item.thumbnail}}">
+            <h3>{{item.title}}</h3>
+          </div>
+          <div class="item">
+            <div ng-bind-html="item.description"></div>
+          </div>
+        </div>
+      </ion-list>
+    </ion-scroll>
+  </ion-content>
+</ion-view>
