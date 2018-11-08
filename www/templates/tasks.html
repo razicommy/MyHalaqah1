@@ -1,0 +1,53 @@
+<ion-view title="Tasks" cache-view="false" nav-transition="none" id="page12" style="background-color:#FFFFFF;">
+  <ion-nav-buttons side="right" class="has-header">
+    <button class="button button-positive icon ion-android-add-circle" ng-click="prepAddItem()"> Add</button>
+  </ion-nav-buttons>
+  <ion-content padding="true" class="has-header">
+    <div class="mainlayer">
+      <ion-scroll scroll-glue="true" class="list-container">
+        <ion-list>
+          <ion-item class="item-icon-right" ng-repeat="item in tasks" on-hold="prepDeleteItem(item)" style="text-align: left;">
+            <h2>{{item.title}}</h2>
+            <p>{{item.desc}}
+              <br> {{item.ref}}
+              <br> {{item.latlon1}}
+              <br>
+            </p>
+
+            <i class="icon ion-ios-arrow-right" ng-click="prepEditNote(item)"></i>
+            <ion-option-button class="button-assertive" ng-click="prepRemoveItem(item)">Remove</ion-option-button>
+          </ion-item>
+        </ion-list>
+      </ion-scroll>
+    </div>
+    <ion-list id="tasks-list2">
+      <ion-item class="item-icon-left item-icon-right" id="tasks-list-item14">
+        <i class="icon ion-cube"></i>Item
+        <i class="icon ion-chevron-right" ng-click="test()"></i>
+        <ion-option-button class="button-assertive">Remove</ion-option-button>
+        <ion-option-button class="button-energized">Edit</ion-option-button>
+      </ion-item>
+      <ion-item id="tasks-list-item15">Item</ion-item>
+      <label class="item item-input" id="tasks-input1">
+        <span class="input-label">Input</span>
+        <input type="text" placeholder="">
+      </label>
+      <label class="item item-select" id="tasks-select1" name="relationship">
+        <span class="input-label">Relationship</span>
+        <select ng-model="app.parents[0].rship" ng-options="item.code as item.label for item in [{code:'f',label:'father'},{code:'m',label:'mother'}]"></select>
+      </label>
+    </ion-list>
+    <hr>
+    <div id="tasks-markdown1" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">{{app.batches[0]}}</p>
+    </div>
+    <div id="tasks-container1">
+      <div id="tasks-markdown2" class="show-list-numbers-and-dots">
+        <p style="color:#008000;">What can we do to help you?</p>
+      </div>
+      <div id="tasks-markdown3" style="text-align:right;" class="show-list-numbers-and-dots">
+        <p style="color:#FF0000;">I would like to know about registration process</p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,55 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-balanced">
+      <ion-nav-back-button></ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="side-menu21"></ion-nav-view>
+  </ion-side-menu-content>
+  <ion-side-menu side="left" id="side-menu21" style="background-color:#2CB859;">
+    <ion-header-bar class="bar-balanced">
+      <div class="title">Menu</div>
+    </ion-header-bar>
+    <ion-content padding="false" class="side-menu-left has-header ">
+      <div>
+        <center>
+          <br>
+          <img ng-src="{{app.user.userInfo.imageData||app.defaults.images.imgPerson}}" width="100px">
+          <br>
+          <p class="dark" style="margin-top:-10px;"> {{app.user.userInfo.email||''}}</p>
+          <p class="positive" style="margin-top:-10px;" ng-click="userAction('user','popupView',null,null)">{{app.user.userInfo.displayName||'(your display name)'}}</p>
+
+        </center>
+
+        <div class="button-bar">
+          <!--SIGNED IN-->
+          <button class="button button-energized button-block button-icon"></button>
+          <button ng-click="userAction('user','popupView',null,null)" menu-close="" class="button button-energized button-clear button-icon icon ion-gear-a"></button>
+          <button ng-click="userAction('user','signOut',null,null)" menu-close="" class="button button-assertive button-clear button-icon icon ion-log-out assertive"></button>
+          <button class="button button-assertive button-block button-icon assertive"></button>
+        </div>
+        <!--button-bar-->
+      </div>
+      <ion-item class="item-divider" ng-click="toggleMenu($event,'Main')" style="min-height: 40px;">
+        <i class="icon ion-home"></i> MAIN
+        <span class="collapsible" style="position:absolute;right:10px">▽</span>
+      </ion-item>
+      <ion-list id="menu-list1" ng-show="page.showMenuMain">
+        <ion-item id="menu-list-item1" ui-sref="menu.home()" menu-close="">Home</ion-item>
+        <ion-item id="menu-list-item41" ui-sref="menu.takwim()" menu-close="">Takwim</ion-item>
+        <ion-item id="menu-list-item42" ui-sref="menu.halaqah()" menu-close="">Halaqah</ion-item>
+      </ion-list>
+      <div>
+        <ion-item class="item-divider" ng-click="toggleMenu($event,'User')">
+          <i class="icon ion-person"></i> DIREKTORI HALAQAH
+          <span class="collapsible" style="position:absolute;right:10px">▽</span>
+        </ion-item>
+        <ion-list ng-show="page.showMenuUser">
+          <ion-item ng-click="userAction('org','view',null,null)">Direktori</ion-item>
+        </ion-list>
+      </div>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
